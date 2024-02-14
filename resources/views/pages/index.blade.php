@@ -5,7 +5,7 @@
 @section('content')
     <h1>Train</h1>
     <ul>
-        @foreach ($traina as $train)
+        @foreach ($treni as $train)
 
         <li>
             <b>

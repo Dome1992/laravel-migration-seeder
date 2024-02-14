@@ -22,7 +22,7 @@ class TrainFactory extends Factory
             'stazione_arrivo' => fake ()->city(),
             'orario_partenza' => fake ()->dateTimeBetween('now', '+3 days'),
             'orario_arrivo' => fake ()->dateTimeBetween('-1 week', '+1 week'),
-            'codice_treno' => fake ()-> numerify('train-#####') ->unique(),
+            'codice_treno' => fake ()->unique() -> numerify('train-#####') ,
             'numero_carrozze' => fake ()->numberBetween(5, 15),
 
         ];
