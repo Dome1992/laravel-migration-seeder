@@ -21,11 +21,11 @@ return new class extends Migration
             $table->string('stazione_arrivo', 255);
             $table->dateTime('orario_partenza');
             $table->dateTime('orario_arrivo');
-            $table->string('codice_treno', 255);
+            $table->string('codice_treno', 255) -> unique();
             $table->integer('numero_carrozze');
             $table->boolean('in_orario')->default(true);
             $table->boolean('cancellato')->default(false);
-            
+
             $table->timestamps();
         });
     }

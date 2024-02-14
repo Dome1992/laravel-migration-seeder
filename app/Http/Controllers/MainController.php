@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     public function index() {
          
-        $trains = Train :: all();
+        $trains = Train :: whereDate('strat_time', '=' , now() -> toDateString()) ->get();
         return view('pages.index', compact ('trains'));
     }
 }

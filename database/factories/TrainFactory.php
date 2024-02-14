@@ -17,13 +17,14 @@ class TrainFactory extends Factory
     public function definition()
     {
         return [
-            'azienda' => $this->faker->sentence(['Trenitalia', 'Italo', 'Frecciarossa']),
-            'stazione_partenza' => $this->faker->city,
-            'stazione_arrivo' => $this->faker->city,
-            'orario_partenza' => $this->faker->dateTimeBetween('-1 week', '+1 week'),
-            'orario_arrivo' => $this->faker->dateTimeBetween('-1 week', '+1 week'),
-            'codice_treno' => $this->faker->randomNumber(5),
-            'numero_carrozze' => $this->faker->numberBetween(5, 15),
+            'azienda' => fake()-> company(),
+            'stazione_partenza' => fake ()->city(),
+            'stazione_arrivo' => fake ()->city(),
+            'orario_partenza' => fake ()->dateTimeBetween('now', '+3 days'),
+            'orario_arrivo' => fake ()->dateTimeBetween('-1 week', '+1 week'),
+            'codice_treno' => fake ()-> numerify('train-#####') ->unique(),
+            'numero_carrozze' => fake ()->numberBetween(5, 15),
+
         ];
     }
 }
